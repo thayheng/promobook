@@ -5,23 +5,16 @@
 <div class="container">
     <div class="row justify-content-center">
       <div class="col-md-3">
-          <div class="card">
-              <div class="card-header" style="background:orange;margin:0px 0px;text-align: center">
-                   <a href="">Categories</a>
-              </div>
-              <div class="card-body">
-            
-              </div>
-          </div>
+          @yield('catagory')
       </div>
       <div class="col-md-6 ">
           <div class="card">
               <div class="card-header row" style="background:orange;margin:0px 0px;text-align: center">
                     <div class="col-4">
-                      <a href="">Promoboard</a>
+                      <a href="{{route('promoboard')}}">Promoboard</a>
                     </div>
                     <div class="col-4">
-                      <a href="">Promoplace</a>
+                      <a href="{{route('promoplace')}}">Promoplace</a>
                     </div>
                     <div class="col-4">
                       <a href="">Promovideo</a>
@@ -34,8 +27,9 @@
                           {{ session('status') }}
                       </div>
                   @endif
-                  
-                    
+
+                  @yield('promoSection')
+            
                   You are logged in!
               </div>
           </div>

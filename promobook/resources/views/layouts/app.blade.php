@@ -16,18 +16,21 @@
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
+
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
-            a{
-              color: white;
-            }
+         a{
+             color: white;
+         }
     </style>
 </head>
 <body>
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light  shadow-sm" style="background:orange">
             <div class="container">
+                
                 <a class="navbar-brand" href="{{ url('/') }}" style="color: white">
                    PROMOBOOK
                 </a>
@@ -37,13 +40,17 @@
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto">
-
+                    <ul class="navbar-nav mr-auto" style="padding-left: 300px">
+                            <form class="form-inline">
+                                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                                    <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
+                                  </form>
                     </ul>
-
+                    
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
+                        
                         @guest
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
@@ -76,7 +83,21 @@
                 </div>
             </div>
         </nav>
-
+        <div class="container">
+            <p></p>
+        </div>
+        <div class="row justify-content-center">
+        <div class="col-md-8">
+                <div class="card">
+                        <div class="card-header" style="background:orange;text-align: center">
+                            <a href="">THANK TO OUR SPONSOR</a>
+                        </div>
+                        <div class="card-body">
+                           <img src="Downloads/1.jpg" alt="" style="width: 30px;height: 30px">
+                        </div>
+                    </div>
+            </div>
+        </div>
         <main class="py-4">
             @yield('content')
         </main>
