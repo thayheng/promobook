@@ -68,7 +68,7 @@
             @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
-                        <a href="{{ url('/promoboard') }}">Home</a>
+                        <a href="{{ route('PostController.index') }}">Home</a>
                     @else
                         <a href="{{ route('login') }}">Login</a>
 

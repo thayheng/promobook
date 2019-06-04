@@ -11,7 +11,7 @@
           <div class="card">
               <div class="card-header row" style="background:orange;margin:0px 0px;text-align: center">
                     <div class="col-4">
-                      <a href="{{route('promoboard')}}">Promoboard</a>
+                      <a href="{{route('PostController.index')}}">Promoboard</a>
                     </div>
                     <div class="col-4">
                       <a href="{{route('promoplace')}}">Promoplace</a>
@@ -30,7 +30,6 @@
 
                   @yield('promoSection')
             
-                  You are logged in!
               </div>
           </div>
       </div>

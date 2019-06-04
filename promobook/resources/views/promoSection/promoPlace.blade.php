@@ -6,12 +6,12 @@
             </div>
             <div class="card-body">
                 <div class="btn-group-vertical" style="width: 100%">
-                    <a href="{{route('promoboard')}}"  class="btn btn-light">Date</a>
+                    {{-- <a href="{{route('promoboard')}}"  class="btn btn-light">Date</a>
                     <a href="{{route('promoboard')}}"  class="btn btn-light">Solo</a>
                     <a href="{{route('promoboard')}}"  class="btn btn-light">Party</a>
                     <a href="{{route('promoboard')}}"  class="btn btn-light">View</a>
                     <a href="{{route('promoboard')}}"  class="btn btn-light">Light</a>
-                    <a href="{{route('promoboard')}}"  class="btn btn-light">Overnight</a>
+                    <a href="{{route('promoboard')}}"  class="btn btn-light">Overnight</a> --}}
                 </div>
             </div>
         </div>

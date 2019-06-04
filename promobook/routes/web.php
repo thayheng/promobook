@@ -17,11 +17,12 @@ Route::get('/', function () {
 
 Auth::routes();
 
-// Route::get('/home', 'HomeController@index')->name('home');  
 
-Route::get('/promoboard', function(){
-    return view('promoSection.promoBoard');
-})->name('promoboard');
+Route::get('/promoboard', 'PostController@index')->name('PostController.index');
+Route::post('/promoboard', 'PostController@store')->name('PostController.store');
+
+
+
 Route::get('/promoplace', function(){
     return view('promoSection.promoPlace')->with(['name'=>"James Moriarty"]);
 })->name('promoplace');

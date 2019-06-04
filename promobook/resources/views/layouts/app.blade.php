@@ -92,8 +92,19 @@
                         <div class="card-header" style="background:orange;text-align: center">
                             <a href="">THANK TO OUR SPONSOR</a>
                         </div>
-                        <div class="card-body">
-                           <img src="Downloads/1.jpg" alt="" style="width: 30px;height: 30px">
+                        <div class="card-body row" style="text-align: center">
+                           <div class="col-3">
+                               Smart Axiata
+                           </div>
+                           <div class="col-3">
+                            Ezecome Internet
+                            </div>
+                            <div class="col-3">
+                            Pizza Company
+                            </div>
+                            <div class="col-3">
+                                Amazone Coffee
+                            </div>
                         </div>
                     </div>
             </div>
