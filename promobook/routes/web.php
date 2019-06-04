@@ -17,7 +17,7 @@ Route::get('/', function () {
 
 Auth::routes();
 
-
+Route::get('/home' , 'PostController@index')->name('PostController.index');
 Route::get('/promoboard', 'PostController@index')->name('PostController.index');
 Route::post('/promoboard', 'PostController@store')->name('PostController.store');
 

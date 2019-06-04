@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Post;
+use Illuminate\Support\Facades\DB;
 
 class PostController extends Controller
 {
@@ -14,8 +15,9 @@ class PostController extends Controller
      */
     public function index()
     {
-        
-        return view('promoSection.promoBoard');
+        $posts=DB::table('posts')->get();
+        return view('promoSection.promoBoard',['posts'=>$posts
+        ]);
     }
 
     /**
