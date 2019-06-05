@@ -38,12 +38,14 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
+        $posts=DB::table('posts')->get();
         $user=Auth::user()->name;
         $data= $request->postdata;
         $like=0;
         $object= new Post();
         $reord = $object->createPost($user,$data,$like);
-        return view('promoSection.promoBoard');
+        return view('promoSection.promoBoard',['posts'=>$posts
+        ]);
     }
 
     /**
