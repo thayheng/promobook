@@ -16,8 +16,6 @@ class PostController extends Controller
     public function index()
     {
         $posts= Post::orderby('id', 'desc')->paginate(10);
-
-        //.$posts=DB::table('posts')->paginate(10);
         return view('promoSection.promoBoard',['posts'=>$posts
         ]);
     }
@@ -40,7 +38,6 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //$posts=DB::table('posts')->get();
         $user=Auth::user()->name;
         $data= $request->postdata;
         $like=0;
