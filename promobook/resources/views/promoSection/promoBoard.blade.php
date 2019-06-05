@@ -20,6 +20,7 @@
             </div>
         </div>
 @endsection
+
 @section('promoSection')
 
         <form action="{{route('PostController.index')}}" method="POST">
