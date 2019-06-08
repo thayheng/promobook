@@ -36,13 +36,23 @@ class PostController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request )
     {
         $user=Auth::user()->name;
-        $data= $request->postdata;
         $like=0;
+
+        $data= $request->data;
+        $image= $request->image;
+
+        if($request->hasFile('image')){
+            $imagefile = $request->file('image');
+            $new_name = rand() . '.' . $imagefile->getClientOriginalName();
+            $imagefile->move(public_path('images'), $new_name);
+            $image=$new_name;
+        }
+
         $object= new Post();
-        $reord = $object->createPost($user,$data,$like);
+        $reord = $object->createPost($user,$data,$image,$like);
         $posts= Post::orderby('id', 'desc')->paginate(10);
         return view('promoSection.promoBoard',['posts'=>$posts
         ]);
@@ -56,7 +66,7 @@ class PostController extends Controller
      */
     public function show($id)
     {
-     
+
     }
 
     /**

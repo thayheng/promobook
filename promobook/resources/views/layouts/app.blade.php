@@ -24,11 +24,32 @@
         a{
             color: white;
         }
+        .search-container {
+  width: auto;
+  margin-left:auto;
+  padding: 10px;
+}
+.search-input {
+  height: 30px;
+  width: 250px;
+  padding: 5px;
+  margin: 0;
+  border: none;
+  background: white;
+}
+.search-button {
+  cursor: pointer;
+  height: 30px;
+  width: auto;
+  border: none;
+  margin-left: -5px;
+  background: white;
+}
     </style>
 </head>
 <body>
 <div id="app">
-    <nav class="navbar navbar-expand-md navbar-light  shadow-sm" style="background:orange">
+    <nav class="navbar navbar-expand-md navbar-light  shadow-sm" style="background:orange; position: fixed; top: 0; width: 100%; overflow: hidden; z-index: 1">
         <div class="container">
 
             <a class="navbar-brand" href="{{ url('/') }}" style="color: white">
@@ -41,10 +62,11 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <!-- Left Side Of Navbar -->
                 <ul class="navbar-nav mr-auto" style="padding-left: 300px">
-                    <form class="form-inline">
-                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
-                    </form>
+                        <div class="search-container">
+                                <input type="text" name="search-text" class="search-input"/>
+                                <button class="search-button">&#x1F50D</button>
+                        </div>
+
                 </ul>
 
                 <!-- Right Side Of Navbar -->
@@ -83,80 +105,15 @@
             </div>
         </div>
     </nav>
-<div class="container">
-    <p></p>
 </div>
-<div class="row justify-content-center">
-    <div class="col-md-8">
-        <div class="card">
-            <div class="card-header" style="background:orange;text-align: center">
-                <a href="">THANK TO OUR SPONSOR</a>
-            </div>
-            <div class="card-body row" style="text-align: center">
-                <div class="col-3">
-                    Smart Axiata
-                </div>
-                <div class="col-3">
-                    Ezecome Internet
-                </div>
-                <div class="col-3">
-                    Pizza Company
-                </div>
-                <div class="col-3">
-                    Amazone Coffee
-                </div>
-            </div>
-        </div>
-    </div>
+
+<div style="margin-top: 50px">
+    <main class="py-4">
+        @yield('content')
+    </main>
+    @include('promoSection.state.footer')
 </div>
-        <main class="py-4">
-            @yield('content')
-        </main>
-        <div class="card-body" style="width: 100%">
-            <hr>
-            <div class="card-body row" style="color: white;text-align: center">
-                <div class="col-4">
-                    <div class="card-header" style="background: orange">
-                        About Us
-                    </div>
-                    <div class="card-body">
-                        <p style="color: black">
-                       Why pay more when you can pay less. We are promobook.app and We believe that we would make a different that positively improve life quality by providing three main values preposition. <br> <p style="color: black">
-                        <b>Convinience &nbsp&nbsp </b> <b>Accuracy &nbsp&nbsp </b>  <b>Save</b>
-                        </p><hr>
-                    </p>
-                    </div>
-                </div>
-                <div class="col-4">
-                    <div class="card-header" style="background: orange">
-                            Contact Us
-                    </div>
-                    <div class="card-body" style="color: black;">
-                        <p>Name: &nbsp;<b>Oeng Meng Thong</b></p>
-                        <p>Position:&nbsp <b>Development Manager</b> </p>
-                        <p>Contact:&nbsp <b>069 606 631</b> </p>
-                        <p>Email: &nbsp <b>thongthong@gmail.com</b></p><hr>
-                    </div>
-                </div>
-                <div class="col-4">
-                    <div class="card-header" style="background: orange">
-                        Follow Us
-                    </div>
-                    <div class="card-body" style="color: black">
-                        <a>Facebook</a><br><br>
-                        <a>Instagram</a><br><br>
-                        <a>Twitter</a><br><br>
-                        
-                        <hr>
-                    </div>
-                </div>
-            </div>
-            <div class="card-body" style="width:100%;text-align: center;background: wheat;margin: 0px 0px">
-                <hr>
-                    COPYRIGHT2019@PROMOBOOK.APP
-            </div>
-        </div>
-</div>
+
 </body>
 </html>
 

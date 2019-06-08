@@ -27,19 +27,20 @@
                           {{ session('status') }}
                       </div>
                   @endif
-
                   @yield('promoSection')
-            
               </div>
           </div>
       </div>
-      <div class="col-md-3">
+      <div class="col-md-3" >
+
+          @include('promoSection.state.sponsor')
+
+            <br>
           <div class="card">
               <div class="card-header" style="background:orange;margin:0px 0px;text-align: center;">
                    <a href="">Messenger</a>
               </div>
               <div class="card-body">
-            
               </div>
           </div>
       </div>

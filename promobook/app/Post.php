@@ -6,18 +6,20 @@ use Illuminate\Database\Eloquent\Model;
 
 class Post extends Model
 {
-    protected $fillable= ['user','data','like'];
+
+    protected $fillable= ['user','data','image','like'];
 
     public function getAllpost(){
         return DB::table(posts)->get();
 
     }
 
-    public function createPost($user,$data,$like){
+    public function createPost($user,$data,$image,$like){
             $record= $this->create([
                 'user' => $user,
                 'data' => $data,
-                'like' => $like
+                'image' => $image,
+                'like' => $like,
             ]);
             return $record;
     }

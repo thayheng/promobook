@@ -23,35 +23,8 @@
 
 @section('promoSection')
 
-        <form action="{{route('PostController.index')}}" method="POST">
-            @csrf
-            <div class="card">
-                <div class="card-body">
-                    <input name="postdata" type="text" placeholder="What do you want to share today?" style="width:100%">
-                </div> 
-                <div class="card-header" style="background: orange; text-align: center">
-                    <button class="btn btn-primary"      style="width: 50%">Post</button>
-                </div>
-            </div>
-        </form>
-        <div class="card-body">
-            @foreach ($posts as $post)
-            <div class="card">
-                <div class="card-header">
-                   <b>{{$post->user}}</b>
-                </div>
-                <div class="card-body">
-                    {{$post->data}}
-                    <br>
-                    <small>
-                        like {{$post->like}}
-                    </small>
-                    <hr>
-                    <button class="btn btn-primary">Like</button>
-                </div>
-            </div>
-            @endforeach
-                {{$posts->links()}}
-        </div>
-    
+@include('promoSection.state.post-status')
+<hr>
+@include('promoSection.state.public-status')
+
 @endsection
