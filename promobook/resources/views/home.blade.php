@@ -38,13 +38,12 @@
             <br>
           <div class="card">
               <div class="card-header" style="background:orange;margin:0px 0px;text-align: center;">
-                   <a href="">Messenger</a>
+                   <a href=""><b>Messenger</b></a>
               </div>
               <div class="card-body">
               </div>
           </div>
       </div>
     </div>
-    
 </div>
 @endsection

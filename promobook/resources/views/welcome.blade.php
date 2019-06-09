@@ -68,26 +68,33 @@
             @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
-                        <a href="{{ route('PostController.index') }}">Home</a>
+                        <a href="{{ route('PostController.index') }}"><b>PROMOBOOK</b></a>
                     @else
-                        <a href="{{ route('login') }}">Login</a>
+                        <a href="{{ route('login') }}"><b>LOGIN</b></a>
 
                         @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
+                            <a href="{{ route('register') }}"><b>REGISTER</b></a>
                         @endif
                     @endauth
                 </div>
             @endif
 
             <div class="content">
-                <div class="title m-b-md">
-                    PROMOBOOK
-                </div>
+                <div class="row">
+                    <div class="col-sm">
+                        <div class="title m-b-md">
+                            PROMOBOOK
+                        </div>
 
-                <div class="links">
-                    <a href="">Accuracy</a>
-                    <a href="">Convinience</a>
-                    <a href="">Secure</a>
+                        <div class="links">
+                            <a href="">Accuracy</a>
+                            <a href="">Convinience</a>
+                            <a href="">Secure</a>
+                        </div>
+                    </div>
+                    <div class="col-sm">
+{{--                        <img src="{{asset('images/upload.png')}}">--}}
+                    </div>
                 </div>
             </div>
         </div>

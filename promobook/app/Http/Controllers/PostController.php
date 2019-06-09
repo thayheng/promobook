@@ -43,6 +43,7 @@ class PostController extends Controller
 
         $data= $request->data;
         $image= $request->image;
+        $category=$request->category;
 
         if($request->hasFile('image')){
             $imagefile = $request->file('image');
@@ -52,7 +53,7 @@ class PostController extends Controller
         }
 
         $object= new Post();
-        $reord = $object->createPost($user,$data,$image,$like);
+        $reord = $object->createPost($user,$data,$image,$category,$like);
         $posts= Post::orderby('id', 'desc')->paginate(10);
         return view('promoSection.promoBoard',['posts'=>$posts
         ]);
