@@ -50,7 +50,7 @@
 </head>
 <body>
 <div id="app">
-    <nav class="navbar navbar-expand-md navbar-light  shadow-sm" style="background:orange; position: fixed; top: 0; width: 100%; overflow: hidden; z-index: 1">
+    <nav class="navbar navbar-expand-md navbar-light  shadow-sm" style="background:orange; position: fixed; top: 0; overflow: visible; width: 100%; z-index: 1">
         <div class="container">
 
             <a class="navbar-brand" href="{{ url('/') }}" style="color: white">
@@ -89,14 +89,6 @@
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                 {{ Auth::user()->name }} <span class="caret"></span>
                             </a>
-
-                            <div class="dropdown-item">
-                                <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                    {{ __('Logout') }}
-                                    Logout
-                                </a>
-                            </div>
 
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="{{ route('logout') }}"
