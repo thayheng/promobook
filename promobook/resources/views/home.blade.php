@@ -32,9 +32,7 @@
           </div>
       </div>
       <div class="col-md-3" >
-
-          @include('promoSection.state.sponsor')
-
+          @yield('sponsor')
             <br>
           <div class="card">
               <div class="card-header" style="background:orange;margin:0px 0px;text-align: center;">

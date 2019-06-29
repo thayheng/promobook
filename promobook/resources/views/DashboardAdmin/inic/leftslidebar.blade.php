@@ -1,4 +1,4 @@
-<aside class="main-sidebar" style="background-color: #000000;">
+<aside class="main-sidebar" id="sidebar-wrapper">
     <section class="sidebar">
         <ul class="sidebar-menu" data-widget="tree">
             <li>

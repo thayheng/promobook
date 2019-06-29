@@ -7,12 +7,20 @@
 
 @section('promoSection')
 @guest
+
     {{$posts->links()}}
     @include('promoSection.state.public-status')
+
 @else
-@include('promoSection.state.post-status')
-<hr>
-@include('promoSection.state.public-status')
+
+    @include('promoSection.state.post-status')
+    <hr>
+    @include('promoSection.state.public-status')
+
 @endguest
 
+@endsection
+
+@section('sponsor')
+    @include('promoSection.state.sponsor')
 @endsection
