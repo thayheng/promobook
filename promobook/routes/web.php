@@ -33,8 +33,8 @@ Route::post('/admin.category', 'CategoryController@store')->name('CategoryContro
 Route::delete('/admin.category', 'CategoryController@destroy')->name('CategoryController.destroy');
 
 Route::get('/promoplace', function(){
-    return view('promoSection.promoPlace')->with(['name'=>"James Moriarty"]);
-})->name('promoplace');
+    return view('promoSection.promoPlace');
+});
 
 
 Route::get('/admin.newpost', function(){

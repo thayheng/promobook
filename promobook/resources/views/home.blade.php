@@ -14,7 +14,7 @@
                       <a href="{{route('PostController.index')}}">Promoboard</a>
                     </div>
                     <div class="col-4">
-                      <a href="{{route('promoplace')}}">Promoplace</a>
+                      <a href="#">Promoplace</a>
                     </div>
                     <div class="col-4">
                       <a href="">Promovideo</a>
