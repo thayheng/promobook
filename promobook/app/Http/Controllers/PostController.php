@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Category;
+use App\Sponsor;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Post;
@@ -14,8 +16,10 @@ class PostController extends Controller
      */
     public function index()
     {
+        $sponsors = Sponsor::all();
+        $categories = Category::all();
         $posts= Post::orderby('id', 'desc')->paginate(10);
-        return view('promoSection.promoBoard',['posts'=>$posts
+        return view('promoSection.promoBoard',['posts'=>$posts, 'categories' =>$categories, 'sponsors'=>$sponsors
         ]);
     }
 
@@ -50,11 +54,12 @@ class PostController extends Controller
             $imagefile->move(public_path('images'), $new_name);
             $image=$new_name;
         }
-
+        $sponsors = Sponsor::all();
+        $categories = Category::all();
         $object= new Post();
         $reord = $object->createPost($user,$data,$image,$category,$like);
         $posts= Post::orderby('id', 'desc')->paginate(10);
-        return view('promoSection.promoBoard',['posts'=>$posts
+        return view('promoSection.promoBoard',['posts'=>$posts, 'categories' => $categories, 'sponsors' => $sponsors
         ]);
     }
 

@@ -1,7 +1,7 @@
 <header class="main-header">
         <!-- Logo -->
         <a href="{{ url('/admin') }}" class="logo hidden-xs">
-            <label style="color: black">Info-Me</label>
+            <label style="color: black">PROMOBOOK</label>
         </a>
         <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
             <span class="sr-only">Toggle navigation</span>

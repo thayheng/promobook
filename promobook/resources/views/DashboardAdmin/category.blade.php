@@ -24,7 +24,7 @@
                                                     <div class="col-lg-6">
 
                                                         <div class="form-group">
-                                                            <label for="name">Namr of Category :</label>
+                                                            <label for="name">Name of Category :</label>
                                                             <input type="text" class="form-control" name="name" placeholder="Type New Name Of Category Here"/>
                                                         </div>
                                                     </div>

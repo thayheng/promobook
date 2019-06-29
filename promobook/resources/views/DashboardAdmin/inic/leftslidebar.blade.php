@@ -7,22 +7,22 @@
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a href={{ route('AllPostControllerAdmin.index') }}>
                     <i class="fa fa-pencil"> </i> <span>All Posts</span>
                 </a>
             </li>
             <li>
-                <a href="/admin.newpost">
+                <a href={{ route('newpostadmin') }}>
                     <i class="glyphicon glyphicon-plus"> </i> <span>New Posts</span>
                 </a>
             </li>
             <li>
-                <a href="/admin.category">
+                <a href={{ route('CategoryController.index') }}>
                     <i class="fa fa-list-ol"> </i> <span>Categories</span>
                 </a>
             </li>
             <li>
-                <a href="/admin.sposor">
+                <a href={{ route('SponsorController.index') }}>
                     <i class="fa fa-support"> </i> <span>Sponsors</span>
                 </a>
             </li>

@@ -1,3 +1,4 @@
+
 <div class="card-body">
 @foreach ($posts as $post)
 <div class="card border-info mb-3">

@@ -12,16 +12,9 @@
                 <div class="col-sm-4">
                     <form>
                         <select name = "category" style="display: block; font-size: 16px;font-family: sans-serif;font-weight: 700;color: #f6993f;line-height: 1.3;padding: .6em 1.4em .5em .8em;width: 100%;max-width: 100%;box-sizing: border-box;margin: 0;border: 1px solid #aaa;box-shadow: 0 1px 0 1px rgba(0,0,0,.04);">
-                            <option value = "Electronics">Electronics</option>
-                            <option value = "Restaurant">Restaurant</option>
-                            <option value = "Coffeshop">Coffeshop</option>
-                            <option value = "Outfit">Outfit</option>
-                            <option value = "Sport">Sport</option>
-                            <option value = "Bookstore">Bookstore</option>
-                            <option value = "Salon">Salon</option>
-                            <option value = "Entertainment">Entertainment</option>
-                            <option value = "Travel">Travel</option>
-                            <option value = "Babystore">Babystore</option>
+                            @foreach ($categories as $category)
+                                <option value = "{{$category->name}}">{{$category->name}}</option>
+                            @endforeach
                         </select>
                     </form>
                 </div>
@@ -61,7 +54,6 @@
             </div>
         </form>
 </div>
-
 
 <script>
     function readURL(input) {

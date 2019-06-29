@@ -11,32 +11,27 @@
 |
 */
 
-Route::get('/', function () {
-
-    return view('welcome');
-});
+Route::get('/', 'PostController@index');
 
 Auth::routes();
 
-Route::get('/home' , 'PostController@index')->name('PostController.index');
-Route::get('/promoboard', 'PostController@index')->name('PostController.index');
-Route::post('/promoboard', 'PostController@store')->name('PostController.store');
-Route::get('/admin.index',function(){
-    return view('DashboardAdmin.indexAdmin');
-});
+Route::group(['middleware'=>'auth'], function () {
 
-Route::get('/admin.sposor', 'SponsorController@index')->name('SponsorController.index');
-Route::post('/admin.sposor', 'SponsorController@store')->name('SponsorController.store');
+    Route::get('/home' , 'PostController@index')->name('PostController.index');
+    Route::get('/promoboard', 'PostController@index')->name('PostController.index');
+    Route::post('/promoboard', 'PostController@store')->name('PostController.store');
+    Route::get('/promoplace', function(){
+        return view('promoSection.promoPlace');
+    });
 
-Route::get('/admin.category', 'CategoryController@index')->name('CategoryController.index');
-Route::post('/admin.category', 'CategoryController@store')->name('CategoryController.store');
-Route::delete('/admin.category', 'CategoryController@destroy')->name('CategoryController.destroy');
+    Route::get('/admin', 'AllPostControllerAdmin@index')->name('AllPostControllerAdmin.index');
+    Route::get('/admin/sponsor', 'SponsorController@index')->name('SponsorController.index');
+    Route::post('/admin/sponsor', 'SponsorController@store')->name('SponsorController.store');
+    Route::get('/admin/category', 'CategoryController@index')->name('CategoryController.index');
+    Route::post('/admin/category', 'CategoryController@store')->name('CategoryController.store');
+    Route::delete('/admin/category', 'CategoryController@destroy')->name('CategoryController.destroy');
+    Route::get('/admin/newpost', function(){
+        return view('DashboardAdmin.newpost');
+    })->name('newpostadmin');
 
-Route::get('/promoplace', function(){
-    return view('promoSection.promoPlace');
-});
-
-
-Route::get('/admin.newpost', function(){
-    return view('DashboardAdmin.newpost');
 });

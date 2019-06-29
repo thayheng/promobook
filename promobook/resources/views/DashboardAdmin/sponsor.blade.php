@@ -86,11 +86,11 @@
                                                                 <td>{{$sponsor->link}}</td>
                                                                 <td><img src="{{asset('images/'.$sponsor->image)}}" class="img-thumbnail" width="75" alt="image"/></td>
                                                                 <td>
-                                                                                                                                            <form action="{{ route('CategoryController.destroy', $category->id)}}" method="post">
-                                                                                                                                                @csrf
-                                                                                                                                                @method('DELETE')
-                                                                                                                                                <button type="submit" class="btn btn-danger" >Delete</button>
-                                                                                                                                            </form>
+{{--                                                                                                                                            <form action="{{ route('CategoryController.destroy', $sponsor->id)}}" method="post">--}}
+{{--                                                                                                                                                @csrf--}}
+{{--                                                                                                                                                @method('DELETE')--}}
+{{--                                                                                                                                                <button type="submit" class="btn btn-danger" >Delete</button>--}}
+{{--                                                                                                                                            </form>--}}
                                                                 </td>
                                                             </tr>
                                                         @endforeach
