@@ -12,8 +12,10 @@ class SponsorController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
+        $request->user()->authorizeRoles(['admin']);
+
         $sponsors= Sponsor::all();
         return view('DashboardAdmin.sponsor',['sponsors'=>$sponsors
         ]);
@@ -37,6 +39,8 @@ class SponsorController extends Controller
      */
     public function store(Request $request)
     {
+        $request->user()->authorizeRoles(['admin']);
+
         $name = $request->name;
         $link = $request->link;
 

@@ -4,11 +4,11 @@
 <div class="card border-info mb-3">
     <div class="card-header">
         <div class="row">
-            <div class="col-sm-6">
+            <div class="col-sm-7">
                 <b style="font-size: 20px">{{$post->user}}</b>
             </div>
-            <div class="col-sm-6">
-                <small> <i style="color: chocolate">{{$post->created_at}}</i></small>
+            <div class="col-sm-5" style="margin:0px 0px;text-align: right">
+                Category: {{$post->category}}
             </div>
         </div>
     </div>
@@ -18,24 +18,16 @@
                 <p>{{$post->data}}</p>
             </div>
         </div>
-        <div class="row" style="width: 18rem;">
-            <div class="col-sm img-responsive" >
-                <img src="{{asset('images/'.$post->image)}}"  class="card-img-top"   alt="image"/>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm">
-                <small>category: {{$post->category}}</small>
+        <div class="row" >
+            <div class="col-sm-12 img-responsive" style="height: auto; width: auto" >
+                <img src="{{asset('images/'.$post->image)}}"  class="img-thumbnail"   alt="image"/>
             </div>
         </div>
         <hr>
-        <div class="row">
-            <div class="col-sm-8">
+        <div class="row" >
+            <div class="col-sm-8" >
                 <small>
                     like {{$post->like}}
-                </small>
-                <small>
-                    view {{$post->like}}
                 </small>
             </div>
             <div class="col-sm-4">
@@ -45,7 +37,7 @@
             </div>
         </div>
         <br>
-        <div class="row">
+        <div class="row" style="margin:0px 0px;text-align: center">
             <div class="col-sm-4">
                 <label for="like">
                     <img src="{{asset('images/like.png')}}" width="30px" height="30px" style="cursor:pointer"> Like

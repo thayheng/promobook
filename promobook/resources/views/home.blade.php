@@ -4,10 +4,10 @@
 
 <div class="container">
     <div class="row justify-content-center">
-      <div class="col-md-3">
+      <div class="col-lg-3">
           @yield('catagory')
       </div>
-      <div class="col-md-6 ">
+      <div class="col-lg-6 ">
           <div class="card">
               <div class="card-header row" style="background:orange;margin:0px 0px;text-align: center">
                     <div class="col-4">
@@ -31,7 +31,7 @@
               </div>
           </div>
       </div>
-      <div class="col-md-3" >
+      <div class="col-lg-3" >
           @yield('sponsor')
             <br>
           <div class="card">

@@ -28,6 +28,11 @@
                             </li>
                         @endif
                     @else
+                        <li>
+                            <a href="{{route('PostController.index')}}">
+                                <button class="primary">View Site</button>
+                            </a>
+                        </li>
                         <li class="nav-item dropdown" >
                             <a id="navbarDropdown"  style="color: #ffffff;" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                 {{ Auth::user()->name }} <span class="caret"></span>

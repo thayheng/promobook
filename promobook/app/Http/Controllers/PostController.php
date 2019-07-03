@@ -14,10 +14,12 @@ class PostController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
+
         $sponsors = Sponsor::all();
         $categories = Category::all();
+
         $posts= Post::orderby('id', 'desc')->paginate(10);
         return view('promoSection.promoBoard',['posts'=>$posts, 'categories' =>$categories, 'sponsors'=>$sponsors
         ]);
@@ -41,6 +43,8 @@ class PostController extends Controller
      */
     public function store(Request $request )
     {
+        $request->user()->authorizeRoles(['admin', 'user']);
+
         $user=Auth::user()->name;
         $like=0;
 

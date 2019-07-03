@@ -1,5 +1,5 @@
 <div class="row justify-content-center">
-    <div class="col-md">
+    <div class="col-lg-12">
         <div class="card">
             <div class="card-header" style="background:orange;text-align: center">
                 <a href=""><b>THANK TO OUR SPONSOR</b></a>
@@ -9,7 +9,9 @@
                     <div class="col">
                         <h3>{{$sponsor->name}}</h3>
                         <br/>
-                        <img alt="image" class="img-thumbnail" src="{{asset('images/'.$sponsor->image)}}"/>
+                        <div class="img-responsive" style="height: auto; width: auto">
+                            <img alt="image" class="img-thumbnail" src="{{asset('images/'.$sponsor->image)}}"/>
+                        </div>
                     </div>
                     <hr>
                 </div>
@@ -17,3 +19,4 @@
         </div>
     </div>
 </div>
+
