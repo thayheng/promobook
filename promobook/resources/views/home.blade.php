@@ -45,3 +45,7 @@
     </div>
 </div>
 @endsection
+
+@section('footer')
+    @include('promoSection.state.footer')
+@endsection

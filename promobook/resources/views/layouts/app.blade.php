@@ -113,7 +113,7 @@
     <main class="py-4">
         @yield('content')
     </main>
-    @include('promoSection.state.footer')
+        @yield('footer')
 </div>
 
 </body>
