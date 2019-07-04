@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Category;
+use App\Post;
+use App\Sponsor;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -26,5 +29,7 @@ class HomeController extends Controller
 //        $request->user()->authorizeRoles(['user', 'admin']);
         return view('home');
     }
+
+
 }
 

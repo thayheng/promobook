@@ -14,14 +14,17 @@ class PostController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
+    public function index()
     {
 
         $sponsors = Sponsor::all();
         $categories = Category::all();
 
         $posts= Post::orderby('id', 'desc')->paginate(10);
-        return view('promoSection.promoBoard',['posts'=>$posts, 'categories' =>$categories, 'sponsors'=>$sponsors
+        return view('promoSection.promoBoard',[
+            'posts'=>$posts,
+            'categories' =>$categories,
+            'sponsors'=>$sponsors
         ]);
     }
 

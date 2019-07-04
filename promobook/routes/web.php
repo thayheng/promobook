@@ -12,6 +12,7 @@
 */
 
 Route::get('/', 'PostController@index');
+Route::get('/search', 'SearchController@search')->name('Search');
 
 Auth::routes();
 

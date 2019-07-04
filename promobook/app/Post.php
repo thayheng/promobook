@@ -3,9 +3,20 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Nicolaslopezj\Searchable\SearchableTrait;
 
 class Post extends Model
 {
+
+    use SearchableTrait;
+
+    protected $searchable = [
+        'columns' => [
+            'user' => 5,
+            'data' => 5,
+            'category' => 5,
+        ]
+    ];
 
     protected $fillable= ['user','data','image','like', 'category'];
 

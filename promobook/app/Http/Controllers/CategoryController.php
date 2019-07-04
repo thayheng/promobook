@@ -62,10 +62,10 @@ class CategoryController extends Controller
 
     public function destroy($id)
     {
-//        $category = Category::findOrFail($id);
-//        $category->delelet();
-//
-//        return view('DashboardAdmin.category');
+        $category = Category::find($id);
+        $category->delete();
+
+        return redirect('/admin/category')->with('success', 'Post is successfully delete');
     }
 
 }

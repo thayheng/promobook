@@ -5,7 +5,7 @@
 
     <section class="content">
         <div class="row">
-            <div class="col-md-8">
+            <div class="col-md-12">
                     @csrf
                     <section class="content-header">
                         <h1>Category</h1>
@@ -18,7 +18,7 @@
                                     <!-- /.box-header -->
                                     <div class="box-body">
                                         <div class="row">
-                                            <div class="col-md-12">
+                                            <div class="col-lg-12">
                                                 <legend>Add New Category:</legend>
                                                 <div class="row">
                                                     <div class="uper">
@@ -40,11 +40,11 @@
                                                                     <td><img src="{{asset('images/'.$post->image)}}" class="img-thumbnail" width="75" alt="image"/></td>
                                                                     <td>{{$post->category}}</td>
                                                                     <td>
-                                                                        {{--                                                                    <form action="{{ route('CategoryController.destroy', $category->id)}}" method="post">--}}
-                                                                        {{--                                                                        @csrf--}}
-                                                                        {{--                                                                        @method('DELETE')--}}
-                                                                        {{--                                                                        <button type="submit" class="btn btn-danger" >Delete</button>--}}
-                                                                        {{--                                                                    </form>--}}
+{{--                                                                        <form action="{{ route('CategoryController.destroy', $post->id)}}" method="post">--}}
+{{--                                                                            @csrf--}}
+{{--                                                                            @method('DELETE')--}}
+{{--                                                                            <button type="submit" class="btn btn-danger" >Remove</button>--}}
+{{--                                                                        </form>--}}
                                                                     </td>
                                                                 </tr>
                                                             @endforeach
