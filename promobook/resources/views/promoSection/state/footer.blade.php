@@ -29,7 +29,11 @@
                 Follow Us
             </div>
             <div class="card-body" style="color: black">
-                <a>Facebook</a><br><br>
+                @foreach($followUs as $follow)
+                <img src="{{$follow->icon}}" alt="Social Media Icon">
+                <a href="{{$follow->link}}">{{$follow->name}}</a><br><br>
+
+                @endforeach
                 <a>Instagram</a><br><br>
                 <a>Twitter</a><br><br>
 

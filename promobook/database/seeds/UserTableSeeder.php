@@ -26,5 +26,7 @@ class UserTableSeeder extends Seeder
         $admin->password = bcrypt('secret');
         $admin->save();
         $admin->roles()->attach($role_admin);
+
+        $follow= new followUs();
     }
 }
