@@ -4,7 +4,7 @@
 
     <section class="content">
         <div class="row">
-            <div class="col-md-8">
+            <div class="col-md-12">
                 <form action="{{route('SponsorController.index')}}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <section class="content-header">

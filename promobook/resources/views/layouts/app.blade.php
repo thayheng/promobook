@@ -31,7 +31,7 @@
   padding: 10px;
 }
 .search-input {
-  height: 30px;
+  height: 31px;
   width: 250px;
   padding: 5px;
   margin: 0;
@@ -40,7 +40,7 @@
 }
 .search-button {
   cursor: pointer;
-  height: 30px;
+  height: 31px;
   width: auto;
   border: none;
   margin-left: -5px;
@@ -63,11 +63,12 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <!-- Left Side Of Navbar -->
                 <ul class="navbar-nav mr-auto" style="padding-left: 300px">
+                    <form action="{{route('Search')}}" method="GET">
                         <div class="search-container">
-                                <input type="text" name="search-text" class="search-input"/>
-                                <button class="search-button">&#x1F50D</button>
+                            <input type="text" name="search" class="search-input"/>
+                            <button class="search-button" >&#x1F50D</button>
                         </div>
-
+                    </form>
                 </ul>
 
                 <!-- Right Side Of Navbar -->
@@ -96,7 +97,6 @@
                                                      document.getElementById('logout-form').submit();">
                                     {{ __('Logout') }}
                                 </a>
-
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                     @csrf
                                 </form>
@@ -113,7 +113,7 @@
     <main class="py-4">
         @yield('content')
     </main>
-    @include('promoSection.state.footer')
+        @yield('footer')
 </div>
 
 </body>

@@ -5,7 +5,7 @@
 <section class="content">
     <label>New Post</label>
     <div class="row">
-        <div class="col-md-8">
+        <div class="col-md-12">
             <form novalidate="novalidate" id="entryForm" action="#" method="post" enctype="multipart/form-data">
             <section class="content-header">
                 <h1>POST</h1>
