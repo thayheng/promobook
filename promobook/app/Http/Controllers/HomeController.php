@@ -27,9 +27,8 @@ class HomeController extends Controller
     public function index()
     {
 //        $request->user()->authorizeRoles(['user', 'admin']);
-        $followUs= new followUs();
-        $follow= $followUs->getAllFollowUs();
-        return view('home', ['followUs' => $follow]);
+       
+        return view('home');
     }
 
 

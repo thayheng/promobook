@@ -13,19 +13,19 @@ class FollowUsSeeder extends Seeder
     {
         //
         $follow= new followUs();
-        $follow->name="facebook";
+        $follow->name="Facebook";
         $follow->icon="facebook_50px.png";
         $follow->link="www.facebook.com";
         $follow->save();
 
         $follow= new followUs();
-        $follow->name="twitter";
+        $follow->name="Twitter";
         $follow->icon="twitter_50px.png";
         $follow->link="www.twitter.com";
         $follow->save();
 
         $follow= new followUs();
-        $follow->name="instagram";
+        $follow->name="Instagram";
         $follow->icon="instagram_50px.png";
         $follow->link="www.instagram.com";
         $follow->save();

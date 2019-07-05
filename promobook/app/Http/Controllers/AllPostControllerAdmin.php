@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Category;
 use App\Post;
+use App\followUs;
 use Illuminate\Http\Request;
 use App\Role;
 use App\User;
@@ -25,9 +26,12 @@ class AllPostControllerAdmin extends Controller
         $categories = Category::all();
 
         $posts = Post::all();
+        $followUs= new followUs();
+        $follow= $followUs->getAllFollowUs();
         return view('DashboardAdmin.indexAdmin', [
             'categories'=>$categories,
             'posts'=>$posts
+            , 'followUs' => $follow
         ]);
     }
 }
