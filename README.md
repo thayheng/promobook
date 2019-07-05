@@ -17,3 +17,4 @@ Installation
 6 php artisan key:generate
 
 7 php artisan magrate  ( before type this cmd line please go to edit your server localhost, port, db, name db, password db on file .env )
+8 php artisan db:seed (to insert default data to each table)
