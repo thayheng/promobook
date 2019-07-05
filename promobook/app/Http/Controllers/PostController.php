@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 use App\Category;
 use App\Sponsor;
-use App\followUs;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Post;
@@ -20,15 +19,12 @@ class PostController extends Controller
 
         $sponsors = Sponsor::all();
         $categories = Category::all();
-        $followUs= new followUs();
-        $follow= followUs::All();
 
         $posts= Post::orderby('id', 'desc')->paginate(10);
         return view('promoSection.promoBoard',[
             'posts'=>$posts,
             'categories' =>$categories,
             'sponsors'=>$sponsors
-            , 'followUs' => $follow
         ]);
     }
 

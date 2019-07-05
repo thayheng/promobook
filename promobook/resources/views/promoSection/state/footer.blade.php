@@ -28,12 +28,14 @@
             <div class="card-header" style="background: orange">
                 Follow Us
             </div>
-            <div class="card-body" style="color: black; padding-left:210px;" align='left'>
+            <div class="card-body" style="color: black">
                 @foreach($followUs as $follow)
-                <img src="{{asset('images/'.$follow->icon)}}" alt="Icon"  magin-left=50px>
-                <a href="{{$follow->link}}" text-color='black'>{{$follow->name}}</a><br><br>
+                <img src="{{$follow->icon}}" alt="Social Media Icon">
+                <a href="{{$follow->link}}">{{$follow->name}}</a><br><br>
 
                 @endforeach
+                <a>Instagram</a><br><br>
+                <a>Twitter</a><br><br>
 
                 <hr>
             </div>

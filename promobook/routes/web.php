@@ -12,7 +12,6 @@
 */
 
 Route::get('/', 'PostController@index');
-Route::get('/follow', function(){return view('promoSection.followUs');});
 Route::get('/search', 'SearchController@search')->name('Search');
 
 Auth::routes();

@@ -3,7 +3,6 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Facades\DB;
 
 class followUs extends Model
 {
@@ -17,7 +16,7 @@ class followUs extends Model
     protected $fillable= ['name','link','icon'];
 
     public function getAllFollowUs(){
-        return DB::table('follow_us')->get();
+        return DB::table(follow_us)->get();
 
     }
 
