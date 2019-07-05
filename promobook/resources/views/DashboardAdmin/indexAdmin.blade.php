@@ -8,7 +8,7 @@
             <div class="col-md-12">
                     @csrf
                     <section class="content-header">
-                        <h1>Category</h1>
+                        <h1>All Posts</h1>
                     </section><!-- ./Section header -->
                     <!-- Main content -->
                     <section class="content">
@@ -19,9 +19,13 @@
                                     <div class="box-body">
                                         <div class="row">
                                             <div class="col-lg-12">
-                                                <legend>Add New Category:</legend>
-                                                <div class="row">
+
                                                     <div class="uper">
+                                                        @if(session()->get('success'))
+                                                            <div class="alert alert-success">
+                                                                {{ session()->get('success') }}
+                                                            </div><br/>
+                                                        @endif
                                                         <table class="table table-striped">
                                                             <thead>
                                                             <tr>
@@ -37,10 +41,10 @@
                                                                 <tr>
                                                                     <td>{{$post->user}}</td>
                                                                     <td>{{$post->data}}</td>
-                                                                    <td><img src="{{asset('images/'.$post->image)}}" class="img-thumbnail" width="75" alt="image"/></td>
+                                                                    <td><img src="{{asset('images/'.$post->image)}}" class="img-thumbnail img-responsive" width="50" height="50" alt="image"/></td>
                                                                     <td>{{$post->category}}</td>
                                                                     <td>
-{{--                                                                        <form action="{{ route('CategoryController.destroy', $post->id)}}" method="post">--}}
+{{--                                                                        <form action="{{ route('AllPostControllerAdmin.destroy', $post->id)}}" method="POST">--}}
 {{--                                                                            @csrf--}}
 {{--                                                                            @method('DELETE')--}}
 {{--                                                                            <button type="submit" class="btn btn-danger" >Remove</button>--}}
@@ -50,9 +54,9 @@
                                                             @endforeach
                                                             <tbody>
                                                         </table>
+                                                            {{$posts->links()}}
                                                     </div>
 
-                                                </div>
                                             </div>
                                         </div>
                                     </div>

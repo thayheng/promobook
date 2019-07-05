@@ -13,7 +13,7 @@
 
 Route::get('/', 'PostController@index');
 Route::get('/search', 'SearchController@search')->name('Search');
-
+Route::get('/filter', 'CategoryController@search')->name('Filter');
 Auth::routes();
 
 Route::group(['middleware'=>'auth'], function () {

@@ -3,12 +3,19 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 use Nicolaslopezj\Searchable\SearchableTrait;
 
 class Post extends Model
 {
 
     use SearchableTrait;
+
+    // Table Name
+    protected $table = 'posts';
+    // Primary Key
+
+    public $primaryKey = 'id';
 
     protected $searchable = [
         'columns' => [
@@ -18,7 +25,18 @@ class Post extends Model
         ]
     ];
 
+//    public function filter($name){
+//        return DB::table('posts')->where('category', $name)->get();
+//    }
+
     protected $fillable= ['user','data','image','like', 'category'];
+
+    public function id(){
+        return DB::table(posts)->get(id);
+    }
+    public function getByCategory($category){
+        return DB::table('posts')->where('category',$category)->get();
+    }
 
     public function getAllpost(){
         return DB::table(posts)->get();

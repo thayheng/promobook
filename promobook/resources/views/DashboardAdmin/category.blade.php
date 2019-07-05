@@ -5,7 +5,7 @@
     <section class="content">
         <div class="row">
             <div class="col-md-12">
-                <form action="{{route('CategoryController.index')}}" method="POST" enctype="multipart/form-data">
+                <form action="{{route('CategoryController.store')}}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <section class="content-header">
                         <h1>Category</h1>
@@ -24,7 +24,7 @@
                                                     <div class="col-lg-3">
                                                         <div class="form-group">
                                                             <label for="name">Name of Category :</label>
-                                                            <input type="text" class="form-control" name="name" placeholder="Name Category"/>
+                                                            <input type="text" class="form-control" name="name" placeholder="Name Category" required/>
                                                         </div>
                                                     </div>
                                                     <div class="col-lg-2">
@@ -41,7 +41,7 @@
                                                             <label for="file">
                                                                 <img src="{{asset('images/upload.png')}}" height="40px" width="150px" style="cursor:pointer"  alt="addicon">
                                                             </label>
-                                                            <input id="file" name="icon" type="file" style="display: none" onchange="readURL(this);"/>
+                                                            <input id="file" name="icon" type="file" style="display: none" onchange="readURL(this);" required/>
                                                         </div>
 
                                                     </div>
@@ -81,19 +81,21 @@
                         <tbody>
                         @foreach($categories as $category)
                             <tr>
-                                <td><img src="{{asset('images/'.$category->icon)}}" class="img-thumbnail" width="75" alt="image"/></td>
+                                <td><img src="{{asset('images/'.$category->icon)}}" class="img-thumbnail" width="50" height="50" alt="image"/></td>
                                 <td>{{$category->name}}</td>
                                 <td>
-{{--                                    <form action="{{ route('CategoryController.destroy', $category->id)}}" method="POST">--}}
-{{--                                        @csrf--}}
-{{--                                        @method('DELETE')--}}
-{{--                                        <button type="submit" class="btn btn-danger" >Delete</button>--}}
-{{--                                    </form>--}}
+                                    <form action="{{ route('CategoryController.destroy', $category->id)}}" method="get">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="btn btn-danger" >Delete</button>
+                                    </form>
                                 </td>
                             </tr>
                         @endforeach
+
                         <tbody>
                     </table>
+                    {{$categories->links()}}
                 </div>
             </div>
         </div>

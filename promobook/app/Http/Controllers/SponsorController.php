@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Category;
 use App\Sponsor;
 use Illuminate\Http\Request;
 
@@ -17,7 +18,8 @@ class SponsorController extends Controller
         $request->user()->authorizeRoles(['admin']);
 
         $sponsors= Sponsor::all();
-        return view('DashboardAdmin.sponsor',['sponsors'=>$sponsors
+        return view('DashboardAdmin.sponsor',[
+            'sponsors'=>$sponsors
         ]);
     }
 
@@ -53,8 +55,9 @@ class SponsorController extends Controller
 
         $object= new Sponsor();
         $sponsor = $object->createSponsor($name,$link, $image);
-        $sponsors= Sponsor::orderby('id', 'desc');
-        return view('DashboardAdmin.sponsor',['sponsors'=>$sponsors
+        $sponsors= Sponsor::orderby('id', 'desc')->paginate(10);
+        return view('DashboardAdmin.sponsor',[
+            'sponsors'=>$sponsors
         ]);
     }
 

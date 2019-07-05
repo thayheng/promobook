@@ -24,10 +24,19 @@ class AllPostControllerAdmin extends Controller
         $request->user()->authorizeRoles('admin');
         $categories = Category::all();
 
-        $posts = Post::all();
+        $posts = Post::orderby('id', 'desc')->paginate(10);
         return view('DashboardAdmin.indexAdmin', [
             'categories'=>$categories,
             'posts'=>$posts
         ]);
     }
+
+    public function destroy($id)
+    {
+            $post = Post::findOrFail($id);
+            $post->delete();
+            return redirect('/admin')->with('success', 'Post is successfully delete');
+
+    }
+
 }

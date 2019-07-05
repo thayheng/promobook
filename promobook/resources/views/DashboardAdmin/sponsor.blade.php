@@ -24,14 +24,14 @@
                                                     <div class="col-lg-6">
 
                                                         <div class="form-group">
-                                                            <label for="name">Name of Category :</label>
-                                                            <input type="text" class="form-control" name="name" placeholder="Type New Name Of Category Here"/>
+                                                            <label for="name">Name of Sponsor :</label>
+                                                            <input type="text" class="form-control" name="name" placeholder="Type New Name Of Sponsor Here" required/>
                                                         </div>
                                                     </div>
 
-                                                    <div class="col-lg-4">
+                                                    <div class="col-lg-2">
                                                         <div class="form-group status-post-submit" style="text-align: center">
-                                                            <label for="name">Click Button Add for Add New Sponser :</label>
+
                                                             <button class="btn btn-primary"      style="width: 100%">Add</button>
                                                         </div>
                                                     </div>
@@ -41,7 +41,7 @@
                                                     <div class="col-lg-6">
                                                         <div class="form-group">
                                                             <label for="link">Link Sponsor :</label>
-                                                            <input type="text" class="form-control" name="link" placeholder="https://www.doamin.com"/>
+                                                            <input type="text" class="form-control" name="link" placeholder="https://www.doamin.com" required/>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -50,11 +50,11 @@
                                                     <div class="col-lg-3">
 
                                                         <div class="form-group">
-                                                            <label>Add Icon Catrgory :</label>
+                                                            <label>Add Logo Sponsor :</label>
                                                             <label for="file">
                                                                 <img src="{{asset('images/upload.png')}}" height="40px" width="150px" style="cursor:pointer"  alt="addicon">
                                                             </label>
-                                                            <input id="file" name="image" type="file" style="display: none" onchange="readURL(this);"/>
+                                                            <input id="file" name="image" type="file" style="display: none" onchange="readURL(this);" required/>
                                                         </div>
 
                                                     </div>
@@ -67,39 +67,8 @@
                                                     <div class="col-lg-6">
                                                     </div>
                                                 </div>
-                                                <hr>
-
-                                                <div class="uper">
-                                                    <table class="table table-striped">
-                                                        <thead>
-                                                        <tr>
-                                                            <td>Name</td>
-                                                            <td>Link</td>
-                                                            <td>Image</td>
-                                                            <td style="width: 260px">Action</td>
-                                                        </tr>
-                                                        </thead>
-                                                        <tbody>
-                                                        @foreach($sponsors as $sponsor)
-                                                            <tr>
-                                                                <td>{{$sponsor->name}}</td>
-                                                                <td>{{$sponsor->link}}</td>
-                                                                <td><img src="{{asset('images/'.$sponsor->image)}}" class="img-thumbnail" width="75" alt="image"/></td>
-                                                                <td>
-{{--                                                                                                                                            <form action="{{ route('CategoryController.destroy', $sponsor->id)}}" method="post">--}}
-{{--                                                                                                                                                @csrf--}}
-{{--                                                                                                                                                @method('DELETE')--}}
-{{--                                                                                                                                                <button type="submit" class="btn btn-danger" >Delete</button>--}}
-{{--                                                                                                                                            </form>--}}
-                                                                </td>
-                                                            </tr>
-                                                        @endforeach
-                                                        <tbody>
-                                                    </table>
-                                                </div>
                                             </div>
                                         </div>
-                                        <hr>
                                     </div>
                                     <!-- /.box-body -->
                                 </div>
@@ -107,6 +76,34 @@
                         </div>
                     </section>
                 </form>
+                <div class="uper">
+                    <table class="table table-striped">
+                        <thead>
+                        <tr>
+                            <td>Name</td>
+                            <td>Link</td>
+                            <td>Image</td>
+                            <td style="width: 260px">Action</td>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        @foreach($sponsors as $sponsor)
+                            <tr>
+                                <td>{{$sponsor->name}}</td>
+                                <td>{{$sponsor->link}}</td>
+                                <td><img src="{{asset('images/'.$sponsor->image)}}" class="img-thumbnail" width="50" height="50" alt="image"/></td>
+                                <td>
+                                    {{--                                                                                                                                            <form action="{{ route('CategoryController.destroy', $sponsor->id)}}" method="post">--}}
+                                    {{--                                                                                                                                                @csrf--}}
+                                    {{--                                                                                                                                                @method('DELETE')--}}
+                                    {{--                                                                                                                                                <button type="submit" class="btn btn-danger" >Delete</button>--}}
+                                    {{--                                                                                                                                            </form>--}}
+                                </td>
+                            </tr>
+                        @endforeach
+                        <tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </section>

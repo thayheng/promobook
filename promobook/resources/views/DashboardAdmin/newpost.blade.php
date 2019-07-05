@@ -3,9 +3,8 @@
 @section('content')
 
 <section class="content">
-    <label>New Post</label>
     <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-8">
             <form novalidate="novalidate" id="entryForm" action="#" method="post" enctype="multipart/form-data">
             <section class="content-header">
                 <h1>POST</h1>
@@ -26,22 +25,16 @@
                                     <div class="col-md-12">
                                         <legend>Post Contents:</legend>
                                             <div class="row">
-                                                <div class="col-lg align-content-center">
+                                                <div class="col-md-12">
                                                     <div class="form-group">
                                                         <label>
-                                                            <textarea id="messageArea" name="messageArea" rows="15" class="form-control ckeditor" placeholder="Write your message.."></textarea>
+                                                            <textarea id="messageArea" name="messageArea" rows="20" class="form-control ckeditor" placeholder="Write your message.."></textarea>
                                                         </label>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="row">
-                                                <div class="col-lg">
-                                                    <span>Here is your editor page</span>
-                                                </div>
-                                            </div>
                                     </div>
                                 </div>
-                                <hr>
                             </div>
                             <!-- /.box-body -->
                         </div>

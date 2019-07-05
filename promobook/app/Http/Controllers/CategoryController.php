@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Category;
+use App\Post;
+use App\Sponsor;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
@@ -16,8 +18,9 @@ class CategoryController extends Controller
     {
         $request->user()->authorizeRoles('admin');
 
-        $categories= Category::all();
-        return view('DashboardAdmin.category',['categories'=>$categories
+        $categories= Category::orderby('id', 'desc')->paginate(10);
+        return view('DashboardAdmin.category',[
+            'categories'=>$categories
         ]);
     }
 
@@ -54,15 +57,41 @@ class CategoryController extends Controller
 
         $object= new Category();
         $category = $object->createCategory($name,$icon);
-        $categories= Category::orderby('name', 'asc');
-        return view('DashboardAdmin.category',['categories'=>$categories
+        $categories= Category::orderby('id', 'desc')->paginate(10);
+        return view('DashboardAdmin.category',[
+            'categories'=>$categories
+        ]);
+
+    }
+
+    public function search(Request $request) {
+
+        $categories = Category::all();
+        $sponsors = Sponsor::all();
+
+//        $filters = Post::where('category', $name)->get();
+//        $filer = new Post();
+//        $filters = $filer->filter($name);
+
+        if($request->has('category')){
+            $name= $request->get('category');
+            $filter = new Post();
+            $filters= $filter->getByCategory($name);
+        }else{
+            $filters = Post::all();
+        }
+
+        return view('promoSection.filterCategory', [
+            'filters'=>$filters,
+            'categories'=>$categories,
+            'sponsors'=>$sponsors,
         ]);
 
     }
 
     public function destroy($id)
     {
-        $category = Category::find($id);
+        $category = Category::findOrFail($id);
         $category->delete();
 
         return redirect('/admin/category')->with('success', 'Post is successfully delete');
