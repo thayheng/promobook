@@ -3,18 +3,18 @@
 
 Installation
 
-1 clone project using command line 
-  git clone https://github.com/thayheng/promobook.git
-  
-2 after clone
+1 git clone https://github.com/thayheng/promobook.git
 
-3 go to folder promobook and than go to folder promobook
+2 create file & config .env and then copy all text from file env.example
 
-4 composer install
+3 composer install
 
-5 npm install
+4 npm install or yarn install
 
-6 php artisan key:generate
+5 php artisan key:generate
 
-7 php artisan magrate  ( before type this cmd line please go to edit your server localhost, port, db, name db, password db on file .env )
-8 php artisan db:seed (to insert default data to each table)
+6 php artisan magrate  ( before type this cmd line please go to edit your server localhost, port, db, name db, password db on file .env )
+
+7 php artisan db:seed (to insert default data to each table)
+
+8 php artisan serve
