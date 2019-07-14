@@ -27,6 +27,5 @@ class UserTableSeeder extends Seeder
         $admin->save();
         $admin->roles()->attach($role_admin);
 
-        $follow= new followUs();
     }
 }
