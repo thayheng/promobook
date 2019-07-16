@@ -25,3 +25,15 @@ $factory->define(User::class, function (Faker $faker) {
         'remember_token' => Str::random(10),
     ];
 });
+
+// $factory->define(User::class, function (Faker $faker) {
+//     $name = ["facebook","twitter","instagram"];
+//     $icon = ["facebook_50px.png","twitter_50px.png","instagram_50px.png"];
+//     $link = ["www.facebook.com","www.twitter.com","www.instagram.com"];
+//     return [
+//         'name' => $name[0],
+//         'link' => $,
+//         'icon' => ""
+        
+//     ];
+// });
